@@ -8,4 +8,4 @@ This repository contains anonymized, configurable versions of scripts originally
 
 ## Components
 
-| File | Purpose |
+- `scripts
