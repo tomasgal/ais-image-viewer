@@ -1,0 +1,14 @@
+[Unit]
+Description=AIs image upload service
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+ExecStart=/usr/local/bin/ais-upload-server.py --image-dir /srv/ais/images --index-command "/usr/local/bin/ais-make-index.py --image-dir /srv/ais/images --output /srv/ais/web/index.html --file-url-prefix /ais/files" --host 127.0.0.1 --port 9080
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
